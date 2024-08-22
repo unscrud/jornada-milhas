@@ -1,0 +1,68 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/dist/
+*.log
+
+# Compiled output
+/dist/
+/tmp
+/out-tsc
+/out
+/build
+/.angular/cache
+/.angular/analytics
+
+# Dependencies
+/node_modules
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# Environment
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Angular specific
+.angular/
+.angular/cache/
+.angular-build/
+
+# IDEs and Editors
+/.idea
+/.vscode
+*.sublime-project
+*.sublime-workspace
+
+# MacOS
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Miscellaneous
+*.bak
+*.swp
+*.tmp
+*.temp
+
+# Generated files
+*.class
+*.exe
+*.dll
+*.cache
+*.lock
+*.pyc
+*.pyo
+*.pyd
