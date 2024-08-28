@@ -15,6 +15,7 @@ import { ContainerComponent } from './shared/container/container.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
 import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
+import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoiment
     ContainerComponent,
     HomeComponent,
     CardBuscaComponent,
-    CardDepoimentoComponent
+    CardDepoimentoComponent,
+    FormBuscaComponent
   ],
   imports: [
     BrowserModule,
