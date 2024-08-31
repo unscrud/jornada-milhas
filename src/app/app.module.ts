@@ -21,6 +21,7 @@ import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoiment
 import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatChipsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
