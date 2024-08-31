@@ -1,53 +1,20 @@
 <section class="modal">
     <h1 mat-dialog-title>Viajante</h1>
     <div mat-dialog-content>
-        <div class="selecao-idade">
-            <ul>
-                <li><strong>Adultos</strong></li>
-                <li>(Acima de 12 anos)</li>
-                <li>
-                    <button class="decremento" mat-mini-fab color="primary">
-                        <mat-icon aria-hidden="false" aria-label="Remover" fontIcon="remove"></mat-icon>
-                    </button>
-                    <span>1</span>
-                    <button class="incremento" mat-mini-fab color="primary">
-                        <mat-icon aria-hidden="false" aria-label="Adicionar" fontIcon="add"></mat-icon>
-                    </button>
-                </li>
-            </ul>
-        </div>
+        <app-selecao-idade
+            titulo="Adultos"
+            descricao="(Acima de 12 anos)"
+        ></app-selecao-idade>
 
-        <div class="selecao-idade">
-            <ul>
-                <li><strong>Crianças</strong></li>
-                <li>(Entre 2 e 11 anos)</li>
-                <li>
-                    <button class="decremento" mat-mini-fab color="primary">
-                        <mat-icon aria-hidden="false" aria-label="Remover" fontIcon="remove"></mat-icon>
-                    </button>
-                    <span>1</span>
-                    <button class="incremento" mat-mini-fab color="primary">
-                        <mat-icon aria-hidden="false" aria-label="Adicionar" fontIcon="add"></mat-icon>
-                    </button>
-                </li>
-            </ul>
-        </div>
+        <app-selecao-idade
+            titulo="Crianças"
+            descricao="(Entre 2 e 11 anos)"
+        ></app-selecao-idade>
 
-        <div class="selecao-idade">
-            <ul>
-                <li><strong>Bebês</strong></li>
-                <li>(Até 2 anos)</li>
-                <li>
-                    <button class="decremento" mat-mini-fab color="primary">
-                        <mat-icon aria-hidden="false" aria-label="Remover" fontIcon="remove"></mat-icon>
-                    </button>
-                    <span>1</span>
-                    <button class="incremento" mat-mini-fab color="primary">
-                        <mat-icon aria-hidden="false" aria-label="Adicionar" fontIcon="add"></mat-icon>
-                    </button>
-                </li>
-            </ul>
-        </div>
+        <app-selecao-idade
+            titulo="Bebês"
+            descricao="(Até 2 anos)"
+        ></app-selecao-idade>
     </div>
 
     <div mat-dialog-actions class="modal-actions">
