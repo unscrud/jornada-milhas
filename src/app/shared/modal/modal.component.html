@@ -1,20 +1,9 @@
 <section class="modal">
     <h1 mat-dialog-title>Viajante</h1>
     <div mat-dialog-content>
-        <app-selecao-idade
-            titulo="Adultos"
-            descricao="(Acima de 12 anos)"
-        ></app-selecao-idade>
-
-        <app-selecao-idade
-            titulo="Crianças"
-            descricao="(Entre 2 e 11 anos)"
-        ></app-selecao-idade>
-
-        <app-selecao-idade
-            titulo="Bebês"
-            descricao="(Até 2 anos)"
-        ></app-selecao-idade>
+        <app-selecao-idade></app-selecao-idade>
+        <app-selecao-idade tipo="crianca"></app-selecao-idade>
+        <app-selecao-idade tipo="bebe"></app-selecao-idade>
     </div>
 
     <div mat-dialog-actions class="modal-actions">
