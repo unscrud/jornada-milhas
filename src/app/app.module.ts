@@ -26,6 +26,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.comp
     CardDepoimentoComponent,
     FormBuscaComponent,
     ModalComponent,
-    SelecaoIdadeComponent
+    SelecaoIdadeComponent,
+    PromocoesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.comp
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
