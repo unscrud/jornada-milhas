@@ -2,7 +2,7 @@
     <form class="form-busca" [formGroup]="formBuscaService.formBusca">
         <h2>Passagens</h2>
         <div class="flex-container">
-            <mat-button-toggle-group aria-label="Tipo de passagem">
+            <mat-button-toggle-group aria-label="Tipo de passagem" formControlName="somenteIda">
                 <mat-button-toggle>
                     <mat-icon>check</mat-icon>
                     IDA E VOLTA
