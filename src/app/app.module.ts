@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
