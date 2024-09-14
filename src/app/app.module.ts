@@ -29,6 +29,7 @@ import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.comp
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatDialogModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
