@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-uf',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./dropdown-uf.component.scss']
 })
 export class DropdownUfComponent {
-
+  @Input() label: string = ""
+  @Input() iconePrefixo: string = ""
 }
