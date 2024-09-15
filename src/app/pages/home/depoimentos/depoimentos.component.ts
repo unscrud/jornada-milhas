@@ -18,6 +18,4 @@ export class DepoimentosComponent implements OnInit {
           this.depoimentos = depoimentos
         })
   }
-
-
 }
