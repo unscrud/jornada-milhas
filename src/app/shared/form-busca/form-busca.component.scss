@@ -22,3 +22,13 @@ form-busca {
         margin: 40px 0;
         display: block;
 }
+
+mat-chip {
+    .inner {
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+}
