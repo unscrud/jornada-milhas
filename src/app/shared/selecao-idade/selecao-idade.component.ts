@@ -11,7 +11,7 @@ export class SelecaoIdadeComponent implements ControlValueAccessor {
   @Input() descricao: string = "";
 
   value: number = 0;
-  onChange = () => {};
+  onChange = (val: number) => {};
   onTouch = () => {};
 
   writeValue(val: any): void {
@@ -31,10 +31,16 @@ export class SelecaoIdadeComponent implements ControlValueAccessor {
   }
 
   incrementar(): void {
-    console.log("vai incrementar");
+    this.value += 1
+    this.onChange(this.value)
+    this.onTouch()
   }
 
   decrementar(): void{
-    console.log("vai decrementar")
+    if (this.value > 0) {
+      this.value -= 1
+      this.onChange(this.value)
+      this.onTouch();
+    }
   }
 }
