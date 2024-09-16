@@ -29,4 +29,12 @@ export class SelecaoIdadeComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     throw new Error("Method not implemented.");
   }
+
+  incrementar(): void {
+    console.log("vai incrementar");
+  }
+
+  decrementar(): void{
+    console.log("vai decrementar")
+  }
 }

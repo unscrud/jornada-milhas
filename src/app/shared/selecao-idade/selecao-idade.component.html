@@ -3,12 +3,30 @@
         <li><strong>{{ titulo }}</strong></li>
         <li>{{ descricao }}</li>
         <li>
-            <button class="decremento" mat-mini-fab color="primary">
-                <mat-icon aria-hidden="false" aria-label="Remover" fontIcon="remove"></mat-icon>
+            <button 
+                class="decremento" 
+                mat-mini-fab color="primary" 
+                (click)="decrementar()"
+            >
+                <mat-icon 
+                    aria-hidden="false" 
+                    aria-label="Remover" 
+                    fontIcon="remove" 
+                />
             </button>
+            
             <span>1</span>
-            <button class="incremento" mat-mini-fab color="primary">
-                <mat-icon aria-hidden="false" aria-label="Adicionar" fontIcon="add"></mat-icon>
+            
+            <button 
+                class="incremento" 
+                mat-mini-fab color="primary" 
+                (click)="incrementar()"
+            >
+                <mat-icon 
+                    aria-hidden="false" 
+                    aria-label="Adicionar" 
+                    fontIcon="add" 
+                />
             </button>
         </li>
     </ul>
