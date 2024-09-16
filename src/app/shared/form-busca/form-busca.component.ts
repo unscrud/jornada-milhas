@@ -10,4 +10,7 @@ export class FormBuscaComponent {
   constructor(
     public formBuscaService: FormBuscaService
   ){}
+  buscar() {
+    console.log("Vai buscar")
+  }
 }
