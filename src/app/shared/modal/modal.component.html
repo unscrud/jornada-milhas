@@ -18,12 +18,14 @@
                     <mat-chip-option 
                         value="Econômica"
                         [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Econômica'"
+                        (selectionChange)="formBuscaService.alterarTipo($event, 'Econômica')"
                     >
                         Econômica
                     </mat-chip-option>
                     <mat-chip-option 
                         value="Executiva"
                         [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Executiva'"
+                        (selectionChange)="formBuscaService.alterarTipo($event, 'Executiva')"
                     >
                         Executiva
                     </mat-chip-option>
