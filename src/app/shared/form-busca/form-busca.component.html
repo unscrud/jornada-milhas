@@ -30,7 +30,7 @@
                 iconePrefixo="flight_takeoff"
                 [control]="formBuscaService.obterControle('origem')"
             />
-            <button mat-icon-button>
+            <button mat-icon-button (click)="formBuscaService.trocarOrigemDestino()">
                 <mat-icon>sync_alt</mat-icon>
             </button>
             <app-dropdown-uf
