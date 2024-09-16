@@ -32,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.compo
     SelecaoIdadeComponent,
     PromocoesComponent,
     DropdownUfComponent,
-    DepoimentosComponent
+    DepoimentosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
