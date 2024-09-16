@@ -15,8 +15,18 @@
             <div class="selecao-categoria">
                 <p><strong>Categoria</strong></p>
                 <mat-chip-listbox aria-label="Seleção de passagens">
-                    <mat-chip-option value="Econômica">Econômica</mat-chip-option>
-                    <mat-chip-option value="Executiva">Executiva</mat-chip-option>
+                    <mat-chip-option 
+                        value="Econômica"
+                        [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Econômica'"
+                    >
+                        Econômica
+                    </mat-chip-option>
+                    <mat-chip-option 
+                        value="Executiva"
+                        [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Executiva'"
+                    >
+                        Executiva
+                    </mat-chip-option>
                 </mat-chip-listbox>
             </div>
         </div>
