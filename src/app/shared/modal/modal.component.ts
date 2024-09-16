@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 
 @Component({
   selector: 'app-modal',
@@ -11,4 +12,6 @@ export class ModalComponent {
     { titulo: 'Crianças', descricao: '(Entre 2 e 11 anos)' },
     { titulo: 'Bebês', descricao: '(Até 2 anos)' }
   ];
+
+  constructor(public formBuscaService: FormBuscaService) {}
 }
