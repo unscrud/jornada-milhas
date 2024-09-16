@@ -11,6 +11,6 @@ export class FormBuscaComponent {
     public formBuscaService: FormBuscaService
   ){}
   buscar() {
-    console.log("Vai buscar")
+    console.log("Dados do form: ", this.formBuscaService.formBusca.value)
   }
 }
