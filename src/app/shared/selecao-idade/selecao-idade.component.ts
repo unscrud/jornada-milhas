@@ -1,10 +1,17 @@
-import { Component, Input } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { Component, forwardRef, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: "app-selecao-idade",
   templateUrl: "./selecao-idade.component.html",
   styleUrls: ["./selecao-idade.component.scss"],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SelecaoIdadeComponent),
+      multi: true
+    }
+  ]
 })
 export class SelecaoIdadeComponent implements ControlValueAccessor {
   @Input() titulo: string = "";
