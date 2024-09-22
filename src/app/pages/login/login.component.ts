@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AutenticacaoService } from 'src/app/core/services/autenticacao.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AutenticacaoService
+    private authService: AutenticacaoService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
     this.authService.autenticar(email,senha).subscribe({
       next: (value) => {
         console.log('Login realizado com sucesso', value)
+        this.router.navigateByUrl('/')
       },
       error: (err) => {
         console.log('Erro no login',err)
