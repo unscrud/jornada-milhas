@@ -15,9 +15,21 @@
                 <div class="grid-container">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Nome</mat-label>
-                        <input matInput formControlName="nome" placeholder="Nome">
+                        <input type="text" matInput formControlName="nome" placeholder="Nome">
                         <mat-error *ngIf="cadastroForm.get('nome')?.errors">Nome é obrigatório</mat-error>
                     </mat-form-field>
+                    <div class="grig-item">
+                        <mat-form-field appearance="outline" matFormFieldControl>
+                            <mat-label>Data de Nascimento</mat-label>
+                            <input matInput formControlName="nascimento" placeholder="Data de Nascimento" [matDatepicker]="nascimento">
+                            <mat-datepicker-toggle matSuffix [for]="nascimento"></mat-datepicker-toggle>
+                            <mat-datepicker #nascimento></mat-datepicker>
+                            <mat-hint>DD/MM/YYYY</mat-hint>
+                            <mat-error *ngIf="cadastroForm.get('nascimento')?.errors?.['required']">
+                                Data de nascimento é obrigatória
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
                 </div>
             </mat-card-content>
         </form>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './form-base.component.html',
   styleUrls: ['./form-base.component.scss']
 })
-export class FormBaseComponent {
+export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup
 
   constructor(
@@ -16,6 +16,7 @@ export class FormBaseComponent {
   ngOnInit(){
     this.cadastroForm = this.formBuilder.group({
       nome: [null, Validators.required],
+      nascimento: [null, Validators.required],
     })
   }
 }
