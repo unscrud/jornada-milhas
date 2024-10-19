@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-base',
@@ -12,4 +12,10 @@ export class FormBaseComponent {
   constructor(
     private formBuilder: FormBuilder
   ){}
+
+  ngOnInit(){
+    this.cadastroForm = this.formBuilder.group({
+      nome: [null, Validators.required],
+    })
+  }
 }
