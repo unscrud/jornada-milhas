@@ -37,6 +37,7 @@ import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 
 @NgModule({
   declarations: [
@@ -79,8 +80,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDividerModule,
     MatCheckboxModule,
     MatAutocompleteModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: "pt-BR" }],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: "pt-BR" },
+    provideNgxMask({
+      dropSpecialCharacters: false,
+    }),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
