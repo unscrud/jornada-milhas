@@ -22,7 +22,7 @@ import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.component';
@@ -56,7 +56,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     DropdownUfComponent,
     DepoimentosComponent,
     LoginComponent,
-    FormBaseComponent
+    FormBaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,9 +78,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatRadioModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: "pt-BR" }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
