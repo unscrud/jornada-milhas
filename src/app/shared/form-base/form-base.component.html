@@ -29,6 +29,12 @@
                                 Data de nascimento é obrigatória
                             </mat-error>
                         </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>CPF</mat-label>
+                            <input matInput formControlName="cpf" placeholder="Digite seu CPF">
+                            <mat-error *ngIf="cadastroForm.get('cpf')?.errors?.['required']">CPF é obrigatório</mat-error>
+                            <mat-error *ngIf="cadastroForm.get('cpf')?.errors?.['pattern']">Formato inválido do CPF</mat-error>
+                        </mat-form-field>
                     </div>
                 </div>
             </mat-card-content>

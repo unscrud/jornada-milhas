@@ -17,6 +17,13 @@ export class FormBaseComponent implements OnInit {
     this.cadastroForm = this.formBuilder.group({
       nome: [null, Validators.required],
       nascimento: [null, Validators.required],
-    })
+      cpf: [
+        null,
+        [
+          Validators.required,
+          Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/),
+        ],
+      ],
+    });
   }
 }
