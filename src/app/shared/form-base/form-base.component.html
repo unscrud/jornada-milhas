@@ -11,6 +11,15 @@
                     </button>
                 </div>
             </section>
+            <mat-card-content>
+                <div class="grid-container">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Nome</mat-label>
+                        <input matInput formControlName="nome" placeholder="Nome">
+                        <mat-error *ngIf="cadastroForm.get('nome')?.errors">Nome é obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
         </form>
     </mat-card>
 </app-container>
