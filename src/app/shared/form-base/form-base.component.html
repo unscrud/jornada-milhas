@@ -1,1 +1,16 @@
-<p>form-base works!</p>
+<app-container>
+    <mat-card>
+        <form [formGroup]="cadastroForm">
+            <mat-card-title>Crie sua conta</mat-card-title>
+            <section>
+                <div>
+                    <h2>Dados Pessoais</h2>
+                    <button mat-stroked-button color="primary">
+                        <mat-icon>logout</mat-icon>
+                        DESLOGAR
+                    </button>
+                </div>
+            </section>
+        </form>
+    </mat-card>
+</app-container>
