@@ -34,6 +34,9 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from "@angular/material/divider";
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -72,6 +75,9 @@ import { FormBaseComponent } from './shared/form-base/form-base.component';
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatRadioModule,
+    MatDividerModule,
+    MatCheckboxModule,
     MatAutocompleteModule
   ],
   providers: [],
