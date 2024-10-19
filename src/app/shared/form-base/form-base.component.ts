@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-base',
@@ -8,4 +8,8 @@ import { FormGroup } from '@angular/forms';
 })
 export class FormBaseComponent {
   cadastroForm!: FormGroup
+
+  constructor(
+    private formBuilder: FormBuilder
+  ){}
 }
