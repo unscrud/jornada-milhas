@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { telefoneValidator } from 'src/app/validators/tefone-validator';
 
 @Component({
   selector: 'app-form-base',
@@ -26,7 +27,7 @@ export class FormBaseComponent implements OnInit {
       ],
       cidade: [null, Validators.required],
       genero: ["outro"],
-      telefone: [null, Validators.required],
+      telefone: [null, [Validators.required, telefoneValidator()]],
       estado: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
       senha: [null, [Validators.required, Validators.minLength(8)]],
