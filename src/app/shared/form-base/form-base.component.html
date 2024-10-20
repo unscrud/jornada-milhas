@@ -41,6 +41,16 @@
                             <mat-error *ngIf="cadastroForm.get('cidade')?.errors?.['required']">Cidade é obrigatória</mat-error>
                         </mat-form-field>
                     </div>
+                    <div class="grid-item">
+                        <div class="radio-group">
+                            <label for="genero">Gênero</label>
+                            <mat-radio-group formControlName="genero" color="primary">
+                                <mat-radio-button value="feminino">Feminino</mat-radio-button>
+                                <mat-radio-button value="masculino">Masculino</mat-radio-button>
+                                <mat-radio-button value="outro">Prefiro não informar</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
                 </div>
             </mat-card-content>
         </form>
