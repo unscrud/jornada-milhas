@@ -24,6 +24,15 @@ export class FormBaseComponent implements OnInit {
           Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/),
         ],
       ],
+      cidade: [null, Validators.required],
+      genero: ["outro"],
+      telefone: [null, Validators.required],
+      estado: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      senha: [null, [Validators.required, Validators.minLength(8)]],
+      confirmarEmail: [null, [Validators.required, Validators.email]],
+      confirmarSenha: [null, [Validators.required, Validators.minLength(8)]],
+      aceitarTermos:[null,Validators.requiredTrue]
     });
   }
 }
