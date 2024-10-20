@@ -35,6 +35,11 @@
                             <mat-error *ngIf="cadastroForm.get('cpf')?.errors?.['required']">CPF é obrigatório</mat-error>
                             <mat-error *ngIf="cadastroForm.get('cpf')?.errors?.['pattern']">Formato inválido do CPF</mat-error>
                         </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cidade</mat-label>
+                            <input matInput formControlName="cidade" placeholder="Digite sua Cidade">
+                            <mat-error *ngIf="cadastroForm.get('cidade')?.errors?.['required']">Cidade é obrigatória</mat-error>
+                        </mat-form-field>
                     </div>
                 </div>
             </mat-card-content>
