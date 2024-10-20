@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { telefoneValidator } from 'src/app/validators/tefone-validator';
+import { cpfValidator } from 'src/app/validators/cpf-validator';
 
 @Component({
   selector: 'app-form-base',
@@ -22,7 +23,7 @@ export class FormBaseComponent implements OnInit {
         null,
         [
           Validators.required,
-          Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/),
+          cpfValidator()
         ],
       ],
       cidade: [null, Validators.required],
