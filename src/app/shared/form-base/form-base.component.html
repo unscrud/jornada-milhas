@@ -56,6 +56,12 @@
                             <mat-error *ngIf="cadastroForm.get('telefone')?.errors?.['required']">Telefone é obrigatório</mat-error>
                             <mat-error *ngIf="cadastroForm.get('telefone')?.errors?.['telefoneInvalido']">Telefone incompleto.</mat-error>
                         </mat-form-field>
+                        <app-dropdown-uf 
+                            label="Estado" 
+                            placeholder="Estado" 
+                            [control]="estadoControl"
+                        ></app-dropdown-uf>
+                        <mat-error *ngIf="estadoControl?.errors && estadoControl?.touched">Estado é obrigatório</mat-error>
                     </div>
                 </div>
             </mat-card-content>
