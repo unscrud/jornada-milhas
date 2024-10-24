@@ -38,6 +38,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
     DepoimentosComponent,
     LoginComponent,
     FormBaseComponent,
+    CadastroComponent,
   ],
   imports: [
     BrowserModule,
