@@ -25,21 +25,25 @@
         </div>
         
         <div class="flex-container">
-            <app-dropdown-uf 
-                label="Origem"
-                placeholder="Origem" 
-                iconePrefixo="flight_takeoff"
-                [control]="formBuscaService.obterControle('origem')"
-            />
+            <div class="drop-container">
+                <app-dropdown-uf 
+                    label="Origem"
+                    placeholder="Origem" 
+                    iconePrefixo="flight_takeoff"
+                    [control]="formBuscaService.obterControle('origem')"
+                />
+            </div>
             <button mat-icon-button (click)="formBuscaService.trocarOrigemDestino()">
                 <mat-icon>sync_alt</mat-icon>
             </button>
-            <app-dropdown-uf
-                label="Destino"
-                placeholder="Destino"
-                iconePrefixo="flight_land"
-                [control]="formBuscaService.obterControle('destino')"
-            />
+            <div class="drop-container">
+                <app-dropdown-uf
+                    label="Destino"
+                    placeholder="Destino"
+                    iconePrefixo="flight_land"
+                    [control]="formBuscaService.obterControle('destino')"
+                />
+            </div>
         </div>
         
         <div class="flex-container">
