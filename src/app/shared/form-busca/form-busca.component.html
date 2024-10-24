@@ -26,7 +26,8 @@
         
         <div class="flex-container">
             <app-dropdown-uf 
-                label="Origem" 
+                label="Origem"
+                placeholder="Origem" 
                 iconePrefixo="flight_takeoff"
                 [control]="formBuscaService.obterControle('origem')"
             />
@@ -35,6 +36,7 @@
             </button>
             <app-dropdown-uf
                 label="Destino"
+                placeholder="Destino"
                 iconePrefixo="flight_land"
                 [control]="formBuscaService.obterControle('destino')"
             />
