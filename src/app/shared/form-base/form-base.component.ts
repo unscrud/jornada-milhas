@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { telefoneValidator } from 'src/app/validators/tefone-validator';
 import { cpfValidator } from 'src/app/validators/cpf-validator';
@@ -12,7 +12,7 @@ import { UnidadeFederativa } from 'src/app/core/types/unidade-federativa'
 export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required)
-
+  @Input() perfilComponent!: boolean
   constructor(
     private formBuilder: FormBuilder
   ){}
