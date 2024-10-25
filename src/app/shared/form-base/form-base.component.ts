@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { telefoneValidator } from 'src/app/validators/tefone-validator';
 import { cpfValidator } from 'src/app/validators/cpf-validator';
 import { UnidadeFederativa } from 'src/app/core/types/unidade-federativa'
+import { FormularioService } from 'src/app/core/services/formulario.service';
 
 @Component({
   selector: 'app-form-base',
@@ -16,8 +17,9 @@ export class FormBaseComponent implements OnInit {
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>
 
   constructor(
-    private formBuilder: FormBuilder
-  ){}
+    private formBuilder: FormBuilder,
+    private formularioService: FormularioService
+  ) {}
 
   ngOnInit(){
     this.cadastroForm = this.formBuilder.group({
@@ -40,6 +42,8 @@ export class FormBaseComponent implements OnInit {
       confirmarSenha: [null, [Validators.required, Validators.minLength(8)]],
       aceitarTermos:[null,Validators.requiredTrue]
     });
+
+    this.formularioService.setCadastro(this.cadastroForm)
   }
 
   executarAcao(){
