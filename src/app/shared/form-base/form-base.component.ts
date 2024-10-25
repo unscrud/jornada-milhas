@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { telefoneValidator } from 'src/app/validators/tefone-validator';
 import { cpfValidator } from 'src/app/validators/cpf-validator';
@@ -13,6 +13,8 @@ export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required)
   @Input() perfilComponent!: boolean
+  @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>
+
   constructor(
     private formBuilder: FormBuilder
   ){}
@@ -38,5 +40,9 @@ export class FormBaseComponent implements OnInit {
       confirmarSenha: [null, [Validators.required, Validators.minLength(8)]],
       aceitarTermos:[null,Validators.requiredTrue]
     });
+  }
+
+  executarAcao(){
+    this.acaoClique.emit()
   }
 }
