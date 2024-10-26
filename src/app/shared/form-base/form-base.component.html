@@ -21,7 +21,7 @@
                     <div class="grig-item">
                         <mat-form-field appearance="outline" matFormFieldControl>
                             <mat-label>Data de Nascimento</mat-label>
-                            <input matInput formControlName="nascimento" placeholder="Data de Nascimento" [matDatepicker]="nascimento">
+                            <input matInput appDateMask formControlName="nascimento" placeholder="Data de Nascimento" [matDatepicker]="nascimento">
                             <mat-datepicker-toggle matSuffix [for]="nascimento"></mat-datepicker-toggle>
                             <mat-datepicker #nascimento></mat-datepicker>
                             <mat-hint>DD/MM/YYYY</mat-hint>
