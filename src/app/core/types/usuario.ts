@@ -1,6 +1,6 @@
 import { UnidadeFederativa } from './unidade-federativa'
 
-export interface usuario {
+export interface Usuario {
   nome: string,
   nascimento: string,
   cpf: string,
