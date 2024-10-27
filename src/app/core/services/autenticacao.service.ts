@@ -18,6 +18,6 @@ export class AutenticacaoService {
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.apiUrl}/auth/cadastro`, "usuario")
+    return this.http.post<Usuario>(`${this.apiUrl}/auth/cadastro`, usuario)
   }
 }
