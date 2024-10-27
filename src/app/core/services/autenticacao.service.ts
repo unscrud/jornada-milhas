@@ -17,7 +17,7 @@ export class AutenticacaoService {
     return this.http.post(`${this.apiUrl}/auth/login`,{email,senha})
   }
 
-  cadastrar(usuario: Usuario): Observable<any> {
-    return this.http.post(`${this.apiUrl}/auth/cadastro`,{usuario})
+  cadastrar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.apiUrl}/auth/cadastro`, "usuario")
   }
 }
