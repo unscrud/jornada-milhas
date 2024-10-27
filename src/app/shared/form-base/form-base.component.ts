@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { telefoneValidator } from 'src/app/validators/tefone-validator';
 import { cpfValidator } from 'src/app/validators/cpf-validator';
+import { equalTo } from 'src/app/validators/compara-campos-validator';
 import { UnidadeFederativa } from 'src/app/core/types/unidade-federativa'
 import { FormularioService } from 'src/app/core/services/formulario.service';
 
@@ -38,8 +39,8 @@ export class FormBaseComponent implements OnInit {
       estado: this.estadoControl,
       email: [null, [Validators.required, Validators.email]],
       senha: [null, [Validators.required, Validators.minLength(8)]],
-      confirmarEmail: [null, [Validators.required, Validators.email]],
-      confirmarSenha: [null, [Validators.required, Validators.minLength(8)]],
+      confirmarEmail: [null, [Validators.required, Validators.email, equalTo('email')]],
+      confirmarSenha: [null, [Validators.required, Validators.minLength(8), equalTo('senha')]],
       aceitarTermos:[null,Validators.requiredTrue]
     });
 
