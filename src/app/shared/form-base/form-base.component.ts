@@ -19,6 +19,7 @@ export class FormBaseComponent implements OnInit {
   @Input() textoBotao: string = 'CADASTRAR'
   @Input() perfilComponent: boolean = false
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>
+  @Output() sair: EventEmitter<any> = new EventEmitter<any>
 
   constructor(
     private formBuilder: FormBuilder,
@@ -55,10 +56,14 @@ export class FormBaseComponent implements OnInit {
 
   this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity()
 
-    this.formularioService.setCadastro(this.cadastroForm)
-  }
+  this.formularioService.setCadastro(this.cadastroForm)
+}
 
   executarAcao(){
     this.acaoClique.emit()
+  }
+
+  deslogar() {
+    this.sair.emit()
   }
 }
