@@ -40,6 +40,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { DateMaskDirective } from './shared/form-base/date-mask.directive';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { DateMaskDirective } from './shared/form-base/date-mask.directive';
     FormBaseComponent,
     CadastroComponent,
     DateMaskDirective,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
