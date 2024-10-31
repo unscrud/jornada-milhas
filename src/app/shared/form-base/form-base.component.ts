@@ -47,6 +47,14 @@ export class FormBaseComponent implements OnInit {
       aceitarTermos:[null,Validators.requiredTrue]
     });
 
+  if(this.perfilComponent){
+    this.cadastroForm.get('aceitarTermos')?.setValidators(null)
+  } else {
+    this.cadastroForm.get('aceitarTermos')?.setValidators(Validators.requiredTrue)
+  }
+
+  this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity()
+
     this.formularioService.setCadastro(this.cadastroForm)
   }
 
