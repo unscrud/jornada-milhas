@@ -110,6 +110,7 @@
             <mat-card-actions class="full-width">
                 <button 
                     (click)="executarAcao()"
+                    [class.perfil-button]="perfilComponent"
                     mat-flat-button
                     [disabled]="cadastroForm.invalid"
                     color="primary"
