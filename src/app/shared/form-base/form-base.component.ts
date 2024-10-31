@@ -17,7 +17,7 @@ export class FormBaseComponent implements OnInit {
 
   @Input() titulo: string = 'Crie sua conta'
   @Input() textoBotao: string = 'CADASTRAR'
-  @Input() perfilComponent!: boolean
+  @Input() perfilComponent: boolean = false
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>
 
   constructor(
