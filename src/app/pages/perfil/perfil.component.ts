@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent {
-
+  titulo: string = 'Olá Pessoa'
+  textoBotao: string = 'ATUALIZAR'
+  perfilComponent: boolean = true
 }
