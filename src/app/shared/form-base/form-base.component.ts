@@ -14,6 +14,9 @@ import { FormularioService } from 'src/app/core/services/formulario.service';
 export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required)
+
+  @Input() titulo: string = 'Crie sua conta'
+  @Input() textoBotao: string = 'CADASTRAR'
   @Input() perfilComponent!: boolean
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>
 
