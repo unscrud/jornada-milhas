@@ -38,7 +38,7 @@ export class AutenticacaoService {
     return this.http.post<Usuario>(`${this.apiUrl}/auth/cadastro`, usuario)
   }
 
-  buscarCadastro(token: Usuario): Observable<Usuario> {
+  buscarCadastro(token: string): Observable<Usuario> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
