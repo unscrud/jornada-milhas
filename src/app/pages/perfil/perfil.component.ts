@@ -9,7 +9,7 @@ import { Usuario } from 'src/app/core/types/usuario';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
-  titulo: string = 'Olá Pessoa'
+  titulo: string = 'Olá '
   textoBotao: string = 'ATUALIZAR'
   perfilComponent: boolean = true
 
