@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AutenticacaoService } from 'src/app/core/services/autenticacao.service';
 import { FormularioService } from 'src/app/core/services/formulario.service';
 import { TokenService } from 'src/app/core/services/token.service';
+import { UsuarioService } from 'src/app/core/services/usuario.service';
 import { Usuario } from 'src/app/core/types/usuario';
 
 @Component({
@@ -25,6 +26,7 @@ export class PerfilComponent implements OnInit {
     private tokenService: TokenService,
     private formService: FormularioService,
     private router: Router,
+    private usuarioService: UsuarioService,
     private authService: AutenticacaoService
   ){}
 
@@ -77,6 +79,7 @@ export class PerfilComponent implements OnInit {
   }
 
   deslogar(){
-    console.log('SAIR.... ')
+    this.usuarioService.logout()
+    this.router.navigate(['/login'])
   }
 }
