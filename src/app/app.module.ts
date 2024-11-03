@@ -26,7 +26,7 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SelecaoIdadeComponent } from './shared/selecao-idade/selecao-idade.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -41,6 +41,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { DateMaskDirective } from './shared/form-base/date-mask.directive';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
 
 @NgModule({
   declarations: [
@@ -90,10 +91,17 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     NgxMaskPipe,
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: "pt-BR" },
-    provideNgxMask({
-      dropSpecialCharacters: false,
-    }),
+    { 
+      provide: MAT_DATE_LOCALE, useValue: "pt-BR" },
+      provideNgxMask({
+        dropSpecialCharacters: false,
+      }
+    ),
+    { 
+      provide: HTTP_INTERCEPTORS,
+      useClass: AutenticacaoInterceptor,
+      multi: true 
+    }
   ],
   bootstrap: [AppComponent],
 })
