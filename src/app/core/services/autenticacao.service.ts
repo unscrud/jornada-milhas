@@ -46,7 +46,7 @@ export class AutenticacaoService {
     return this.http.get<Usuario>(`${this.apiUrl}/auth/perfil`, { headers })
   }
 
-  editarCadastro(usuario: Usuario, token: Usuario): Observable<Usuario> {
+  editarCadastro(usuario: Usuario, token: string): Observable<Usuario> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
