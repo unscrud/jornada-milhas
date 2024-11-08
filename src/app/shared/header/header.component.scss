@@ -18,4 +18,16 @@
         margin: 0 16px;
     }
 
+    .links-toolbar>* {
+        margin-right: 20px;
+    }
+
+    .links-toolbar>*:first-child {
+        margin-right: 0;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
 }

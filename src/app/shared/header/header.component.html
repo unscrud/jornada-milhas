@@ -5,12 +5,24 @@
                 <img src="assets/imagens/logo.png" alt="Logo da Jornada Milhas">
             </a>
             <span class="spacer"></span>
-            <button mat-button>Vender Milhas</button>
-            <button mat-button>Sobre</button>
-            <button mat-raised-button color="primary" routerLink="/cadastro">
-                CADASTRE-SE
-            </button>
-            <button routerLink="/login" mat-stroked-button >LOGIN</button>
+            <div class="links-toolbar">
+                <button mat-button>Vender Milhas</button>
+                <button mat-button>Sobre</button>
+
+                <ng-container *ngIf="user$ | async as usuario, else login">
+                    <a routerLink="/perfil">
+                        <img src="assets/icones/user.png" alt="Avatar">
+                    </a>
+                    <button mat-stroked-button (click)="logout()">SAIR</button>
+                </ng-container>
+                
+                <ng-template #login>
+                    <button mat-raised-button color="primary" routerLink="/cadastro">
+                        CADASTRE-SE
+                    </button>
+                    <button routerLink="/login" mat-stroked-button >LOGIN</button>
+                </ng-template>
+            </div>
         </mat-toolbar>
     </app-container>
 </header>
