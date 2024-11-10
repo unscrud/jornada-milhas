@@ -43,6 +43,7 @@ import { DateMaskDirective } from './shared/form-base/date-mask.directive';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
 import { BuscaComponent } from './pages/busca/busca.component';
+import { PassagemComponent } from './shared/passagem/passagem.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { BuscaComponent } from './pages/busca/busca.component';
     DateMaskDirective,
     PerfilComponent,
     BuscaComponent,
+    PassagemComponent,
   ],
   imports: [
     BrowserModule,
