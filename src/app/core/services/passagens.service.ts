@@ -14,14 +14,7 @@ export class PassagensService {
   constructor(private httpClient: HttpClient){}
 
   getPassagens(search: any) : Observable<Resultado>{
-    
-    let params = new HttpParams()
-
-    for (const key in search){
-      if (search.hasOwnProperty(key)){
-        params = params.set(key, search[key])
-      }
-    }
+    const params = search
     
     return this.httpClient.get<Resultado>(`${this.apiUrl}/passagem/search`, {params} )
   }
