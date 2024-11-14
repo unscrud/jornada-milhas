@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Passagem } from 'src/app/core/types/passagem';
 
 @Component({
   selector: 'app-passagem',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./passagem.component.scss']
 })
 export class PassagemComponent {
-
+  @Input() passagem!: Passagem
+  textoIdaVolta = 'Texto Ida Volta'
 }
