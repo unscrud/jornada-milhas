@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 import { PassagensService } from 'src/app/core/services/passagens.service';
 import { Passagem } from 'src/app/core/types/passagem';
 
@@ -12,6 +13,7 @@ export class BuscaComponent implements OnInit {
 
   constructor(
     private passagensService: PassagensService,
+    private formBuscaService: FormBuscaService,
   ){}
 
   ngOnInit(): void {
@@ -26,7 +28,9 @@ export class BuscaComponent implements OnInit {
       porPagina: 25
     }
 
-    this.passagensService.getPassagens(buscaPadrao).subscribe(
+    const busca = this.formBuscaService.formEstaValido ? this.formBuscaService.obterDadosDeBusca() : buscaPadrao
+
+    this.passagensService.getPassagens(busca).subscribe(
       res => {
         console.log(res)
         this.passagens = res.resultado
