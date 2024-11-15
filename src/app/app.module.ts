@@ -45,6 +45,7 @@ import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interc
 import { BuscaComponent } from './pages/busca/busca.component';
 import { PassagemComponent } from './shared/passagem/passagem.component';
 import { FiltrosComplementaresComponent } from './shared/form-busca/filtros-complementares/filtros-complementares.component';
+import { CompanhiasComponent } from './shared/form-busca/filtros-complementares/companhias/companhias.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { FiltrosComplementaresComponent } from './shared/form-busca/filtros-comp
     BuscaComponent,
     PassagemComponent,
     FiltrosComplementaresComponent,
+    CompanhiasComponent,
   ],
   imports: [
     BrowserModule,
