@@ -1,7 +1,7 @@
 export interface DadosBusca {
     somenteIda?: boolean
     passageirosAdultos?: number
-    PassageirosCriancas?: number
+    passageirosCriancas?: number
     passageirosBebes?: number
     tipo?: string
     origemId?: number
