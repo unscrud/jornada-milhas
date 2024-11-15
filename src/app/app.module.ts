@@ -46,6 +46,7 @@ import { BuscaComponent } from './pages/busca/busca.component';
 import { PassagemComponent } from './shared/passagem/passagem.component';
 import { FiltrosComplementaresComponent } from './shared/form-busca/filtros-complementares/filtros-complementares.component';
 import { CompanhiasComponent } from './shared/form-busca/filtros-complementares/companhias/companhias.component';
+import { LabelComponent } from './shared/form-busca/filtros-complementares/label/label.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { CompanhiasComponent } from './shared/form-busca/filtros-complementares/
     PassagemComponent,
     FiltrosComplementaresComponent,
     CompanhiasComponent,
+    LabelComponent,
   ],
   imports: [
     BrowserModule,
