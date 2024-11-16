@@ -25,6 +25,7 @@ export class FormBuscaService {
       bebes: new FormControl(0),
       dataIda: new FormControl(null, Validators.required),
       dataVolta,
+      conexoes: new FormControl(null)
     });
 
     somenteIda.valueChanges.subscribe(somenteIda => {
@@ -93,6 +94,11 @@ export class FormBuscaService {
     const dataVoltaControl = this.obterControle<Date>('dataVolta')
     if(dataVoltaControl.value){
       dadosBusca.dataVolta = dataVoltaControl.value.toISOString()
+    }
+
+    const conexoesControl = this.obterControle<number>('conexoes')
+    if (conexoesControl.value){
+      dadosBusca.conexoes = conexoesControl.value
     }
 
     return dadosBusca
