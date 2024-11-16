@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./precos.component.scss']
 })
 export class PrecosComponent {
-
+  precoMin?: number = 0
+  precoMax?: number = 5000
 }
