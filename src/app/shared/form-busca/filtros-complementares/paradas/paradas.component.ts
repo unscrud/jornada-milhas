@@ -47,4 +47,29 @@ export class ParadasComponent implements OnInit {
       }
     )
   }
+
+  alternarParada(opcao: OpcoesDeParada, checked: boolean){
+    if (!checked) {
+      this.opcoesSelecionadas = null
+      this.formBuscaService.formBusca.patchValue({
+        conexoes: null
+      })
+      return
+    }
+    this.opcoesSelecionadas = opcao
+    this.formBuscaService.formBusca.patchValue({
+      conexoes: Number(opcao.value)
+    })
+  }
+
+  paradaSelecionada(opcao: OpcoesDeParada): boolean {
+    return this.opcoesSelecionadas === opcao
+  }
+
+  incluirParada(opcao: OpcoesDeParada) {
+    if (!this.opcoesSelecionadas){
+      return false
+    }
+    return this.opcoesSelecionadas.value > opcao.value
+  }
 }
