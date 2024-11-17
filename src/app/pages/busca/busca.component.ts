@@ -18,7 +18,7 @@ export class BuscaComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    const buscaPadrao = {
+    const buscaPadrao: DadosBusca = {
       somenteIda: false,
       passageirosAdultos: 1,
       passageirosCriancas: 0,
