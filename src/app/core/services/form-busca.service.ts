@@ -25,7 +25,8 @@ export class FormBuscaService {
       bebes: new FormControl(0),
       dataIda: new FormControl(null, Validators.required),
       dataVolta,
-      conexoes: new FormControl(null)
+      conexoes: new FormControl(null),
+      companhias: new FormControl(null)
     });
 
     somenteIda.valueChanges.subscribe(somenteIda => {
