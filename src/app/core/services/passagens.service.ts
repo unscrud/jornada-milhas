@@ -17,7 +17,7 @@ export class PassagensService {
     const params = this.converterParametrosParaString(search)
     
     return this.httpClient
-        .get<Resultado>(`${this.apiUrl}/passagem/search${params}`)
+        .get<Resultado>(`${this.apiUrl}/passagem/search?${params}`)
   }
 
   converterParametrosParaString(busca: DadosBusca){
