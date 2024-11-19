@@ -5,5 +5,6 @@ export interface Resultado {
     ultimaPagina: number
     total: number 
     precoMin: number
+    precoMax: number
     resultado: Passagem[]
 }
