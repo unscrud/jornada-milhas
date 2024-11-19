@@ -6,6 +6,7 @@
                 color="primary"
                 [value]="opcao.id"
                 (change)="alternarCompanhia(opcao, $event.checked)"
+                [checked]="companhiaSelecionada(opcao)"
             >
                 {{ opcao.nome }}
             </mat-checkbox>
