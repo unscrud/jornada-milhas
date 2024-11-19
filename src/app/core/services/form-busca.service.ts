@@ -26,7 +26,9 @@ export class FormBuscaService {
       dataIda: new FormControl(null, Validators.required),
       dataVolta,
       conexoes: new FormControl(null),
-      companhias: new FormControl(null)
+      companhias: new FormControl(null),
+      precoMin: new FormControl(null),
+      precoMax: new FormControl(null)
     });
 
     somenteIda.valueChanges.subscribe(somenteIda => {
@@ -86,9 +88,9 @@ export class FormBuscaService {
       origemId: this.obterControle<number>('origem').value.id,
       destinoId: this.obterControle<number>('destino').value.id,
       tipo: this.obterControle<string>('tipo').value,
-      passageirosAdultos: this.obterControle<number>('passageirosAdultos').value,
-      passageirosCriancas: this.obterControle<number>('passageirosCriancas').value,
-      passageirosBebes: this.obterControle<number>('passageirosBebes').value,
+      passageirosAdultos: this.obterControle<number>('adultos').value,
+      passageirosCriancas: this.obterControle<number>('criancas').value,
+      passageirosBebes: this.obterControle<number>('bebes').value,
       dataIda: dataIdaControl.value.toISOString()
     }
 
@@ -100,6 +102,21 @@ export class FormBuscaService {
     const conexoesControl = this.obterControle<number>('conexoes')
     if (conexoesControl.value){
       dadosBusca.conexoes = conexoesControl.value
+    }
+
+    const companhiasControl = this.obterControle<number>('companhias')
+    if (companhiasControl.value){
+      dadosBusca.companhiasId = companhiasControl.value
+    }
+
+    const precoMinControl = this.obterControle<number>('precoMin')
+    if (precoMinControl.value){
+      dadosBusca.precoMin = precoMinControl.value
+    }
+
+    const precoMaxControl = this.obterControle<number>('precoMax')
+    if (precoMaxControl.value){
+      dadosBusca.precoMax = precoMaxControl.value
     }
 
     return dadosBusca
