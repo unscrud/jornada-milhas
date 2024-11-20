@@ -43,8 +43,7 @@ export class PassagensService {
         })
         .filter(Boolean)
         .join('&')
-    
-    console.log(query)
+
     return query
   }
 
