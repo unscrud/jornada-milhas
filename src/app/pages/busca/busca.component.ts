@@ -3,6 +3,7 @@ import { take } from 'rxjs';
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 import { PassagensService } from 'src/app/core/services/passagens.service';
 import { DadosBusca } from 'src/app/core/types/dados-busca';
+import { Destaques } from 'src/app/core/types/destaques';
 import { Passagem } from 'src/app/core/types/passagem';
 
 @Component({
@@ -12,6 +13,7 @@ import { Passagem } from 'src/app/core/types/passagem';
 })
 export class BuscaComponent implements OnInit {
   passagens: Passagem[] = []
+  destaques?: Destaques
 
   constructor(
     private passagensService: PassagensService,
@@ -47,6 +49,10 @@ export class BuscaComponent implements OnInit {
             })
           }
         )
+  }
+
+  obterDestaques(){
+    this.destaques = this.passagensService.obterPassagensDestaques(this.passagens)
   }
 
 }
