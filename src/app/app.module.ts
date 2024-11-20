@@ -50,6 +50,7 @@ import { LabelComponent } from './shared/form-busca/filtros-complementares/label
 import { ParadasComponent } from './shared/form-busca/filtros-complementares/paradas/paradas.component';
 import { PrecosComponent } from './shared/form-busca/filtros-complementares/precos/precos.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { PassagemDestaqueComponent } from './shared/form-busca/passagem-destaque/passagem-destaque.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { MatSliderModule } from '@angular/material/slider';
     LabelComponent,
     ParadasComponent,
     PrecosComponent,
+    PassagemDestaqueComponent,
   ],
   imports: [
     BrowserModule,
