@@ -17,8 +17,8 @@ export class PassagensService {
 
   getPassagens(search: DadosBusca) : Observable<Resultado>{
     const params = this.converterParametrosParaString(search)
-    const obs = this.httpClient
-        .get<Resultado>(`${this.apiUrl}/passagem/search?${params}`)
+    const url = `${this.apiUrl}/passagem/search?${params}`
+    const obs = this.httpClient.get<Resultado>(url)
 
     obs.pipe(take(1)).subscribe(res => {
       this.precoMin = res.precoMin
@@ -34,10 +34,14 @@ export class PassagensService {
           if(!value){
             return '' 
           }
-          return `${key}=${value}`
+          if (key === 'tipo'){
+            return `${key}=${encodeURIComponent(value.toString())}`
+          }
+          return `${key}=${value.toString()}`
         })
         .join('&')
-
+    
+    console.log(query)
     return query
   }
 }
