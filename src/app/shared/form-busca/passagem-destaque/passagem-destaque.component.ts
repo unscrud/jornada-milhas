@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Passagem } from 'src/app/core/types/passagem';
 
 @Component({
   selector: 'app-passagem-destaque',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./passagem-destaque.component.scss']
 })
 export class PassagemDestaqueComponent {
-
+  @Input() destacadaPor: string = ''
+  @Input() passagem?: Passagem
+  @Input() variant: 'primary' | 'secondary' | 'default' = 'primary'
 }
