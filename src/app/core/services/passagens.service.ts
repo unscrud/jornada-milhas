@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { Resultado } from '../types/resultado';
 import { Observable, take } from 'rxjs';
 import { DadosBusca } from '../types/dados-busca';
+import { Passagem } from '../types/passagem';
+import { Destaques } from '../types/destaques';
 
 @Injectable({
   providedIn: 'root'
@@ -45,4 +47,34 @@ export class PassagensService {
     console.log(query)
     return query
   }
+
+  obterPassagensDestaques (passagens: Passagem[]): Destaques | undefined {
+    if(!passagens.length){
+      return undefined
+    }
+
+    let ordenadoPorTempo = [...passagens].sort(
+      (a, b) => a.tempoVoo - b.tempoVoo
+    )
+
+    let ordenadoPorPreco = [...passagens].sort(
+      (a, b) => a.total - b.total
+    )
+
+    let maisRapida = ordenadoPorTempo[0]
+    let maisBarata = ordenadoPorPreco[0]
+
+    let ordenadoPorMedia = [...passagens].sort(
+      (a, b) => {
+        let pontuacaoA = (a.tempoVoo / maisBarata.tempoVoo + a.total / maisBarata.total) / 2;
+        let pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
+      return pontuacaoA - pontuacaoB;
+      }
+    )
+
+    let sugerida = ordenadoPorMedia[0]
+    
+    return { maisRapida, maisBarata, sugerida }
+  }
+
 }
