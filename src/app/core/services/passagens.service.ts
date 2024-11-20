@@ -39,6 +39,7 @@ export class PassagensService {
           }
           return `${key}=${value.toString()}`
         })
+        .filter(Boolean)
         .join('&')
     
     console.log(query)
