@@ -47,6 +47,7 @@ export class BuscaComponent implements OnInit {
               precoMin: res.precoMin,
               precoMax: res.precoMax
             })
+            this.obterDestaques()
           }
         )
   }
