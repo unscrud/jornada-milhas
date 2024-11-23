@@ -3,11 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './pages/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
@@ -16,17 +13,15 @@ import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interc
 import { BuscaComponent } from './pages/busca/busca.component';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuscaComponent,
     CadastroComponent,
-    DepoimentosComponent,
-    HomeComponent,
     LoginComponent,
     PerfilComponent,
-    PromocoesComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +33,7 @@ import { MaterialModule } from './core/material/material.module';
     NgxMaskPipe,
     NgxMaskDirective,
     MaterialModule,
+    HomeModule,
   ],
   providers: [
     provideNgxMask({
