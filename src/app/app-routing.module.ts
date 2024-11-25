@@ -4,11 +4,6 @@ import { BuscaComponent } from './busca/busca.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "/home",
-    pathMatch: 'full'
-  },
-  {
     path: "auth",
     loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule)
   },
@@ -17,8 +12,14 @@ const routes: Routes = [
     loadChildren: () => import('./busca/busca.module').then(m => m.BuscaModule)
   },
   {
-    path: "busca",
-    component: BuscaComponent,
+    path: "",
+    redirectTo: "/home",
+    pathMatch: 'full'
+  },
+  {
+    path: "**",
+    redirectTo: "/pagina-nao-encontrada",
+    pathMatch: 'full'
   },
 ];
 
