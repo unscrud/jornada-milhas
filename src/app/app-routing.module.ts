@@ -14,6 +14,10 @@ const routes: Routes = [
   },
   {
     path: "busca",
+    loadChildren: () => import('./busca/busca.module').then(m => m.BuscaModule)
+  },
+  {
+    path: "busca",
     component: BuscaComponent,
   },
 ];
