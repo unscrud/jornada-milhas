@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './autenticacao/login/login.component';
-import { CadastroComponent } from './autenticacao/cadastro/cadastro.component';
-import { PerfilComponent } from './autenticacao/perfil/perfil.component';
 import { BuscaComponent } from './busca/busca.component';
-import { authGuard } from './autenticacao/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,25 +9,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: "login",
-    component: LoginComponent,
-  },
-  {
-    path: "cadastro",
-    component: CadastroComponent,
+    path: "auth",
+    loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule)
   },
   {
     path: "busca",
     component: BuscaComponent,
   },
-  {
-    path: "perfil",
-    component: PerfilComponent,
-    canActivate: [authGuard]
-  },
 ];
 
-@NgModule({
+ @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

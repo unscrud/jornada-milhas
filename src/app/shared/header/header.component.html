@@ -1,7 +1,7 @@
 <header class="app-header">
     <app-container>
         <mat-toolbar>
-            <a routerLink="/">
+            <a routerLink="/home">
                 <img src="assets/imagens/logo.png" alt="Logo da Jornada Milhas">
             </a>
             <span class="spacer"></span>
@@ -10,17 +10,17 @@
                 <button mat-button>Sobre</button>
 
                 <ng-container *ngIf="user$ | async as usuario, else login">
-                    <a routerLink="/perfil">
+                    <a routerLink="/auth/perfil">
                         <img src="assets/icones/user.png" alt="Avatar">
                     </a>
                     <button mat-stroked-button (click)="logout()">SAIR</button>
                 </ng-container>
                 
                 <ng-template #login>
-                    <button mat-raised-button color="primary" routerLink="/cadastro">
+                    <button mat-raised-button color="primary" routerLink="/auth/cadastro">
                         CADASTRE-SE
                     </button>
-                    <button routerLink="/login" mat-stroked-button >LOGIN</button>
+                    <button routerLink="/auth/login" mat-stroked-button>LOGIN</button>
                 </ng-template>
             </div>
         </mat-toolbar>

@@ -26,7 +26,7 @@ export class CadastroComponent {
       this.authService.cadastrar(usuario).subscribe({
         next: (value) => {
           console.log("Cadastro realizado com sucesso: ", value)
-          this.router.navigate(['/login'])
+          this.router.navigate(['auth/login'])
         },
         error: (err) => {
           console.log("Erro ao realizar cadastro: ", err)

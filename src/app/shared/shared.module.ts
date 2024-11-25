@@ -15,6 +15,7 @@ import { CommonModule } from "@angular/common";
 import { MaterialModule } from "../core/material/material.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { SelecaoIdadeComponent } from "./selecao-idade/selecao-idade.component";
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { SelecaoIdadeComponent } from "./selecao-idade/selecao-idade.component";
         CommonModule,
         MaterialModule,
         ReactiveFormsModule,
+        RouterModule,
     ],
     exports: [
         BannerComponent,

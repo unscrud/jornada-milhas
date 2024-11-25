@@ -6,6 +6,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../core/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AutenticacaoRoutingModule } from './autenticacao-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MaterialModule,
     ReactiveFormsModule,
+    AutenticacaoRoutingModule,
   ],
   exports: [
     CadastroComponent,
