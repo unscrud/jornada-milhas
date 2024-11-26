@@ -10,7 +10,7 @@ import { Usuario } from 'src/app/core/types/usuario';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent {
-  perfilComponent: boolean = false
+  perfilComponent = false
 
   constructor(
     private formularioService: FormularioService,

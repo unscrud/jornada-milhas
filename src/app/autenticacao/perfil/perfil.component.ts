@@ -13,12 +13,12 @@ import { Usuario } from 'src/app/core/types/usuario';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
-  titulo: string = 'Olá '
-  textoBotao: string = 'ATUALIZAR'
-  perfilComponent: boolean = true
+  titulo = 'Olá '
+  textoBotao = 'ATUALIZAR'
+  perfilComponent = true
 
-  token: string = ''
-  nome: string = ''
+  token = ''
+  nome = ''
   cadastro!: Usuario
   form!: FormGroup<any> | null
 

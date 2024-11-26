@@ -12,8 +12,8 @@ import { Destaques } from '../../core/types/destaques';
 })
 export class PassagensService {
   apiUrl: string = environment.apiUrl2
-  precoMin: number = 0
-  precoMax: number = 0
+  precoMin = 0
+  precoMax = 0
 
   constructor(private httpClient: HttpClient){}
 
@@ -52,26 +52,26 @@ export class PassagensService {
       return undefined
     }
 
-    let ordenadoPorTempo = [...passagens].sort(
+    const ordenadoPorTempo = [...passagens].sort(
       (a, b) => a.tempoVoo - b.tempoVoo
     )
 
-    let ordenadoPorPreco = [...passagens].sort(
+    const ordenadoPorPreco = [...passagens].sort(
       (a, b) => a.total - b.total
     )
 
-    let maisRapida = ordenadoPorTempo[0]
-    let maisBarata = ordenadoPorPreco[0]
+    const maisRapida = ordenadoPorTempo[0]
+    const maisBarata = ordenadoPorPreco[0]
 
-    let ordenadoPorMedia = [...passagens].sort(
+    const ordenadoPorMedia = [...passagens].sort(
       (a, b) => {
-        let pontuacaoA = (a.tempoVoo / maisBarata.tempoVoo + a.total / maisBarata.total) / 2;
-        let pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
+        const pontuacaoA = (a.tempoVoo / maisBarata.tempoVoo + a.total / maisBarata.total) / 2;
+        const pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
       return pontuacaoA - pontuacaoB;
       }
     )
 
-    let sugerida = ordenadoPorMedia[0]
+    const sugerida = ordenadoPorMedia[0]
     
     return { maisRapida, maisBarata, sugerida }
   }

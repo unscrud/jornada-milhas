@@ -14,10 +14,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class SelecaoIdadeComponent implements ControlValueAccessor {
-  @Input() titulo: string = "";
-  @Input() descricao: string = "";
+  @Input() titulo = "";
+  @Input() descricao = "";
 
-  value: number = 0;
+  value = 0;
   onChange = (val: number) => {};
   onTouch = () => {};
 

@@ -15,9 +15,9 @@ export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup
   estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required)
 
-  @Input() titulo: string = 'Crie sua conta'
-  @Input() textoBotao: string = 'CADASTRAR'
-  @Input() perfilComponent: boolean = false
+  @Input() titulo = 'Crie sua conta'
+  @Input() textoBotao = 'CADASTRAR'
+  @Input() perfilComponent = false
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>
   @Output() sair: EventEmitter<any> = new EventEmitter<any>
 
