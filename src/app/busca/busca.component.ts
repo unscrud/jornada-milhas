@@ -12,8 +12,8 @@ import { Passagem } from 'src/app/core/types/passagem';
   styleUrls: ['./busca.component.scss']
 })
 export class BuscaComponent implements OnInit {
-  passagens: Passagem[] = []
-  destaques?: Destaques
+  passagens: Passagem[] = [];
+  destaques?: Destaques;
 
   constructor(
     private passagensService: PassagensService,
@@ -30,11 +30,11 @@ export class BuscaComponent implements OnInit {
       dataIda: new Date().toISOString(),
       pagina: 1,
       porPagina: 25
-    }
+    };
 
-    const dadosBusca = this.formBuscaService.formEstaValido ? this.formBuscaService.obterDadosDeBusca() : buscaPadrao
+    const dadosBusca = this.formBuscaService.formEstaValido ? this.formBuscaService.obterDadosDeBusca() : buscaPadrao;
 
-    this.busca(dadosBusca)
+    this.busca(dadosBusca);
   }
 
   busca(dadosBusca: DadosBusca){
@@ -42,18 +42,18 @@ export class BuscaComponent implements OnInit {
         .pipe(take(1))
         .subscribe(
           res => {
-            this.passagens = res.resultado
+            this.passagens = res.resultado;
             this.formBuscaService.formBusca.patchValue({
               precoMin: res.precoMin,
               precoMax: res.precoMax
-            })
-            this.obterDestaques()
+            });
+            this.obterDestaques();
           }
-        )
+        );
   }
 
   obterDestaques(){
-    this.destaques = this.passagensService.obterPassagensDestaques(this.passagens)
+    this.destaques = this.passagensService.obterPassagensDestaques(this.passagens);
   }
 
 }

@@ -8,14 +8,14 @@ import { Depoimento } from 'src/app/core/types/depoimento';
   styleUrls: ['./depoimentos.component.scss']
 })
 export class DepoimentosComponent implements OnInit {
-  depoimentos!: Depoimento[]
+  depoimentos!: Depoimento[];
 
   constructor(private servico: DepoimentoService){}
 
   ngOnInit(): void {
     this.servico.listar()
         .subscribe( depoimentos => {
-          this.depoimentos = depoimentos
-        })
+          this.depoimentos = depoimentos;
+        });
   }
 }

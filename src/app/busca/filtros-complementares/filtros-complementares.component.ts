@@ -8,7 +8,7 @@ import { PassagensService } from 'src/app/busca/services/passagens.service';
   styleUrls: ['./filtros-complementares.component.scss']
 })
 export class FiltrosComplementaresComponent {
-  @Output() realizarBusca = new EventEmitter()
+  @Output() realizarBusca = new EventEmitter();
 
   constructor(
     public formBuscaService: FormBuscaService,
@@ -17,16 +17,16 @@ export class FiltrosComplementaresComponent {
 
   busca(){
     if(!this.formBuscaService.formEstaValido){
-      this.formBuscaService.formBusca.markAllAsTouched()
+      this.formBuscaService.formBusca.markAllAsTouched();
       window.scroll({
         top: 0,
         left: 0,
         behavior: 'smooth'
-      })
-      return
+      });
+      return;
     }
 
-    this.realizarBusca.emit(this.formBuscaService.obterDadosDeBusca())
+    this.realizarBusca.emit(this.formBuscaService.obterDadosDeBusca());
   }
 
   limparFiltros(){
@@ -35,6 +35,6 @@ export class FiltrosComplementaresComponent {
       companhias: null,
       precoMin: this.passagensService.precoMin,
       precoMax: this.passagensService.precoMax,
-    })
+    });
   }
 }

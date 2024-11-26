@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   constructor(private router: Router){}
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   navegarParaBusca(event: any){
-    this.router.navigate(['/busca'])
+    this.router.navigate(['/busca']);
   }
 }

@@ -13,14 +13,14 @@ import { Usuario } from 'src/app/core/types/usuario';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
-  titulo = 'Olá '
-  textoBotao = 'ATUALIZAR'
-  perfilComponent = true
+  titulo = 'Olá ';
+  textoBotao = 'ATUALIZAR';
+  perfilComponent = true;
 
-  token = ''
-  nome = ''
-  cadastro!: Usuario
-  form!: FormGroup<any> | null
+  token = '';
+  nome = '';
+  cadastro!: Usuario;
+  form!: FormGroup | null;
 
   constructor(
     private tokenService: TokenService,
@@ -31,16 +31,16 @@ export class PerfilComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.token = this.tokenService.retornarToken()
+    this.token = this.tokenService.retornarToken();
     this.authService.buscarCadastro().subscribe(cadastro =>{
-      this.cadastro = cadastro
-      this.nome = this.cadastro.nome.split(" ")[0]
-      this.carregarFormulario()
-    })
+      this.cadastro = cadastro;
+      this.nome = this.cadastro.nome.split(" ")[0];
+      this.carregarFormulario();
+    });
   }
 
   carregarFormulario () {
-    this.form = this.formService.getCadastro()
+    this.form = this.formService.getCadastro();
     this.form?.patchValue({
         nome: this.cadastro.nome,
         nascimento: this.cadastro.nascimento,
@@ -51,11 +51,11 @@ export class PerfilComponent implements OnInit {
         genero: this.cadastro.genero,
         cidade: this.cadastro.cidade,
         estado: this.cadastro.estado
-    })
+    });
   }
 
   atualizar(){
-    const dadosAtualizados : Usuario = {
+    const dadosAtualizados: Usuario = {
       nome: this.form?.value.nome,
       nascimento: this.form?.value.nascimento,
       cpf: this.form?.value.cpf,
@@ -65,21 +65,21 @@ export class PerfilComponent implements OnInit {
       genero: this.form?.value.genero,
       cidade: this.form?.value.cidade,
       estado: this.form?.value.estado
-    }
+    };
 
     this.authService.editarCadastro(dadosAtualizados).subscribe({
       next: () => {
-        alert('Cadastro editado com sucesso')
-        this.router.navigate(['/'])
+        alert('Cadastro editado com sucesso');
+        this.router.navigate(['/']);
       },
       error: (err) => {
-        console.error('Erro ao alterar cadastro: ', err)
+        console.error('Erro ao alterar cadastro: ', err);
       }
-    })
+    });
   }
 
   deslogar(){
-    this.usuarioService.logout()
-    this.router.navigate(['auth/login'])
+    this.usuarioService.logout();
+    this.router.navigate(['auth/login']);
   }
 }

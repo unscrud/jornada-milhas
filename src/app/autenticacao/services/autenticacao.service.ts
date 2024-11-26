@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -14,7 +14,7 @@ interface AuthResponse {
 })
 export class AutenticacaoService {
 
-  apiUrl: string = environment.apiUrl
+  apiUrl: string = environment.apiUrl;
 
   constructor(
     private http: HttpClient,
@@ -28,21 +28,21 @@ export class AutenticacaoService {
       { observe: 'response'}
     ).pipe(
       tap((response) => {
-        const authToken = response.body?.token || ''
-        this.usuarioService.salvarToken(authToken)
+        const authToken = response.body?.token || '';
+        this.usuarioService.salvarToken(authToken);
       })
-    )
+    );
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.apiUrl}/auth/cadastro`, usuario)
+    return this.http.post<Usuario>(`${this.apiUrl}/auth/cadastro`, usuario);
   }
 
   buscarCadastro(): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.apiUrl}/auth/perfil`)
+    return this.http.get<Usuario>(`${this.apiUrl}/auth/perfil`);
   }
 
   editarCadastro(usuario: Usuario): Observable<Usuario> {
-    return this.http.patch<Usuario>(`${this.apiUrl}/auth/perfil`, usuario)
+    return this.http.patch<Usuario>(`${this.apiUrl}/auth/perfil`, usuario);
   }
 }

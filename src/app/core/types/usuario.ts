@@ -1,4 +1,4 @@
-import { UnidadeFederativa } from './unidade-federativa'
+import { UnidadeFederativa } from './unidade-federativa';
 
 export interface Usuario {
   nome: string,

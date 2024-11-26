@@ -8,5 +8,5 @@ import { Promocao } from 'src/app/core/types/promocao';
 })
 
 export class CardBuscaComponent {
-  @Input() promocao!: Promocao
+  @Input() promocao!: Promocao;
 }

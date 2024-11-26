@@ -19,7 +19,7 @@ const routes: Routes = [
     component: PerfilComponent,
     canActivate: [authGuard]
   },
-]
+];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],

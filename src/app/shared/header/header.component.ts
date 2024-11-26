@@ -14,10 +14,10 @@ export class HeaderComponent {
     private router: Router
   ) {}
 
-  user$ = this.userService.returnUser()
+  user$ = this.userService.returnUser();
 
   logout(){
-    this.userService.logout()
-    this.router.navigate(['auth/login'])
+    this.userService.logout();
+    this.router.navigate(['auth/login']);
   }
 }

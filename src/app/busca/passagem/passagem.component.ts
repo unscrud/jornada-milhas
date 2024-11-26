@@ -7,12 +7,12 @@ import { Passagem } from 'src/app/core/types/passagem';
   styleUrls: ['./passagem.component.scss']
 })
 export class PassagemComponent {
-  @Input() passagem!: Passagem
+  @Input() passagem!: Passagem;
   
   get textoIdaVolta(){ 
     if(!this.passagem.dataVolta){
-      return 'Somente ida'
+      return 'Somente ida';
     }
-    return 'Ida e Volta'
+    return 'Ida e Volta';
   }
 }

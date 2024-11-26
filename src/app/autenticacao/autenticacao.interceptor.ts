@@ -17,13 +17,13 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if(this.tokenService.possuiToken()){
-      const token = this.tokenService.retornarToken()
+      const token = this.tokenService.retornarToken();
 
       request = request.clone({
         setHeaders: {
           'Authorization': `Bearer ${token}`
         }
-      })
+      });
     }
 
     return next.handle(request);

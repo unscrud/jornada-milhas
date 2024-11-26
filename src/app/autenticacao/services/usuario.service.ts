@@ -9,37 +9,37 @@ import { jwtDecode } from  'jwt-decode';
 })
 export class UsuarioService {
 
-  private userSubject = new BehaviorSubject<Usuario | null>(null)
+  private userSubject = new BehaviorSubject<Usuario | null>(null);
 
   constructor(
     private tokenService: TokenService
   ) {
     if (this.tokenService.possuiToken()){
-      this.decodificarJWT()
+      this.decodificarJWT();
     }
   }
 
   decodificarJWT(){
-    const token = this.tokenService.retornarToken()
-    const user = jwtDecode(token) as Usuario
-    this.userSubject.next(user)
+    const token = this.tokenService.retornarToken();
+    const user = jwtDecode(token) as Usuario;
+    this.userSubject.next(user);
   }
 
   returnUser(){
-    return this.userSubject.asObservable()
+    return this.userSubject.asObservable();
   }
 
   salvarToken(token: string) {
-    this.tokenService.salvarToken(token)
-    this.decodificarJWT()
+    this.tokenService.salvarToken(token);
+    this.decodificarJWT();
   }
 
   logout() {
-    this.tokenService.excluirToken()
-    this.userSubject.next(null)
+    this.tokenService.excluirToken();
+    this.userSubject.next(null);
   }
 
   estaLogado(){
-    return this.tokenService.possuiToken()
+    return this.tokenService.possuiToken();
   }
 }

@@ -8,11 +8,11 @@ import { Companhia } from '../../core/types/companhia';
   providedIn: 'root'
 })
 export class CompanhiaService {
-  private apiUrl: string = environment.apiUrl2
+  private apiUrl: string = environment.apiUrl2;
 
   constructor(private httpClient: HttpClient){}
 
   listar(): Observable<Companhia[]> {
-    return this.httpClient.get<Companhia[]>(`${this.apiUrl}/companhias`)
+    return this.httpClient.get<Companhia[]>(`${this.apiUrl}/companhias`);
   }
 }

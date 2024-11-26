@@ -9,7 +9,7 @@ import { OpcoesDeParada } from 'src/app/core/types/opcoes-de-parada';
   styleUrls: ['./paradas.component.scss']
 })
 export class ParadasComponent implements OnInit {
-  opcoesSelecionadas: OpcoesDeParada | null = null  
+  opcoesSelecionadas: OpcoesDeParada | null = null;  
 
   opcoes: OpcoesDeParada[] = [
     {
@@ -28,48 +28,48 @@ export class ParadasComponent implements OnInit {
       display: 'Mais de 2 conexões',
       value: '3',
     },
-  ]
+  ];
 
-  conexoesControl: FormControl<number | null>
+  conexoesControl: FormControl<number | null>;
 
   constructor(
     private formBuscaService: FormBuscaService,
   ) {
-    this.conexoesControl = this.formBuscaService.obterControle<number>('conexoes')
+    this.conexoesControl = this.formBuscaService.obterControle<number>('conexoes');
   }
 
   ngOnInit(): void {
     this.conexoesControl.valueChanges.subscribe(
       (value) => {
         if(value === null){
-          this.opcoesSelecionadas = null
+          this.opcoesSelecionadas = null;
         }
       }
-    )
+    );
   }
 
   alternarParada(opcao: OpcoesDeParada, checked: boolean){
     if (!checked) {
-      this.opcoesSelecionadas = null
+      this.opcoesSelecionadas = null;
       this.formBuscaService.formBusca.patchValue({
         conexoes: null
-      })
-      return
+      });
+      return;
     }
-    this.opcoesSelecionadas = opcao
+    this.opcoesSelecionadas = opcao;
     this.formBuscaService.formBusca.patchValue({
       conexoes: Number(opcao.value)
-    })
+    });
   }
 
   paradaSelecionada(opcao: OpcoesDeParada): boolean {
-    return this.opcoesSelecionadas === opcao
+    return this.opcoesSelecionadas === opcao;
   }
 
   incluirParada(opcao: OpcoesDeParada) {
     if (!this.opcoesSelecionadas){
-      return false
+      return false;
     }
-    return this.opcoesSelecionadas.value > opcao.value
+    return this.opcoesSelecionadas.value > opcao.value;
   }
 }

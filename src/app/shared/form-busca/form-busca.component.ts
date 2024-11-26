@@ -7,7 +7,7 @@ import { FormBuscaService } from 'src/app/core/services/form-busca.service';
   styleUrls: ['./form-busca.component.scss']
 })
 export class FormBuscaComponent {
-  @Output() realizarBusca = new EventEmitter()
+  @Output() realizarBusca = new EventEmitter();
   
   constructor(
     public formBuscaService: FormBuscaService
@@ -15,10 +15,10 @@ export class FormBuscaComponent {
 
   buscar() {
     if(this.formBuscaService.formEstaValido){
-      const formBuscaValue = this.formBuscaService.obterDadosDeBusca()
-      this.realizarBusca.emit(formBuscaValue)
+      const formBuscaValue = this.formBuscaService.obterDadosDeBusca();
+      this.realizarBusca.emit(formBuscaValue);
     } else {
-      alert('O formulário precisa ser preenchido.')
+      alert('O formulário precisa ser preenchido.');
     }
   }
 }

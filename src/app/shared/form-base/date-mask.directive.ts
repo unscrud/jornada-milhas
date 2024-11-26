@@ -5,8 +5,9 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class DateMaskDirective {
   constructor(private el: ElementRef) {}
-
+  //mascara de data será implementada
   @HostListener('input', ['$event'])
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onInputChange(event: Event): void {
     // diretiva ainda não está funcionando adequadamente, reconsiderar
     //const input = this.el.nativeElement;

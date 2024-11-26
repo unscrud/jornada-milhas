@@ -12,8 +12,8 @@ export class FormBuscaService {
   formBusca: FormGroup;
 
   constructor(private dialog: MatDialog) {
-    const somenteIda = new FormControl(false, Validators.required)
-    const dataVolta = new FormControl(null, Validators.required)
+    const somenteIda = new FormControl(false, Validators.required);
+    const dataVolta = new FormControl(null, Validators.required);
 
     this.formBusca = new FormGroup({
       somenteIda,
@@ -33,14 +33,14 @@ export class FormBuscaService {
 
     somenteIda.valueChanges.subscribe(somenteIda => {
       if(somenteIda){
-        dataVolta.disable()
-        dataVolta.setValidators(null)
+        dataVolta.disable();
+        dataVolta.setValidators(null);
       } else {
-        dataVolta.enable()
-        dataVolta.setValidators(Validators.required)
+        dataVolta.enable();
+        dataVolta.setValidators(Validators.required);
       }
-      dataVolta.updateValueAndValidity()
-    })
+      dataVolta.updateValueAndValidity();
+    });
   }
 
   getDescricaoDePassageiros(): string {
@@ -79,7 +79,7 @@ export class FormBuscaService {
   }
 
   obterDadosDeBusca(): DadosBusca{
-    const dataIdaControl = this.obterControle<Date>('dataIda')
+    const dataIdaControl = this.obterControle<Date>('dataIda');
 
     const dadosBusca: DadosBusca = {
       pagina: 1,
@@ -92,34 +92,34 @@ export class FormBuscaService {
       passageirosCriancas: this.obterControle<number>('criancas').value,
       passageirosBebes: this.obterControle<number>('bebes').value,
       dataIda: dataIdaControl.value.toISOString()
-    }
+    };
 
-    const dataVoltaControl = this.obterControle<Date>('dataVolta')
+    const dataVoltaControl = this.obterControle<Date>('dataVolta');
     if(dataVoltaControl.value){
-      dadosBusca.dataVolta = dataVoltaControl.value.toISOString()
+      dadosBusca.dataVolta = dataVoltaControl.value.toISOString();
     }
 
-    const conexoesControl = this.obterControle<number>('conexoes')
+    const conexoesControl = this.obterControle<number>('conexoes');
     if (conexoesControl.value){
-      dadosBusca.conexoes = conexoesControl.value
+      dadosBusca.conexoes = conexoesControl.value;
     }
 
-    const companhiasControl = this.obterControle<number>('companhias')
+    const companhiasControl = this.obterControle<number>('companhias');
     if (companhiasControl.value){
-      dadosBusca.companhiasId = companhiasControl.value
+      dadosBusca.companhiasId = companhiasControl.value;
     }
 
-    const precoMinControl = this.obterControle<number>('precoMin')
+    const precoMinControl = this.obterControle<number>('precoMin');
     if (precoMinControl.value){
-      dadosBusca.precoMin = precoMinControl.value
+      dadosBusca.precoMin = precoMinControl.value;
     }
 
-    const precoMaxControl = this.obterControle<number>('precoMax')
+    const precoMaxControl = this.obterControle<number>('precoMax');
     if (precoMaxControl.value){
-      dadosBusca.precoMax = precoMaxControl.value
+      dadosBusca.precoMax = precoMaxControl.value;
     }
 
-    return dadosBusca
+    return dadosBusca;
   }
 
   openDialog() {
@@ -140,10 +140,10 @@ export class FormBuscaService {
     this.formBusca.patchValue({
       origem: destino,
       destino: origem
-    })
+    });
   }
 
   get formEstaValido () {
-    return this.formBusca.valid
+    return this.formBusca.valid;
   }
 }

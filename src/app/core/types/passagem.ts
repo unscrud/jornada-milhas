@@ -1,6 +1,6 @@
-import { Companhia } from "./companhia"
-import { Orcamento } from "./orcamento"
-import { UnidadeFederativa } from "./unidade-federativa"
+import { Companhia } from "./companhia";
+import { Orcamento } from "./orcamento";
+import { UnidadeFederativa } from "./unidade-federativa";
 
 export interface Passagem{
     tipo: string

@@ -8,7 +8,7 @@ const routes: Routes = [
         path: '',
         component: BuscaComponent
     }
-] 
+]; 
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],

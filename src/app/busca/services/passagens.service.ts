@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Resultado } from '../../core/types/resultado';
@@ -11,57 +11,57 @@ import { Destaques } from '../../core/types/destaques';
   providedIn: 'root'
 })
 export class PassagensService {
-  apiUrl: string = environment.apiUrl2
-  precoMin = 0
-  precoMax = 0
+  apiUrl: string = environment.apiUrl2;
+  precoMin = 0;
+  precoMax = 0;
 
   constructor(private httpClient: HttpClient){}
 
-  getPassagens(search: DadosBusca) : Observable<Resultado>{
-    const params = this.converterParametrosParaString(search)
-    const url = `${this.apiUrl}/passagem/search?${params}`
-    const obs = this.httpClient.get<Resultado>(url)
+  getPassagens(search: DadosBusca): Observable<Resultado>{
+    const params = this.converterParametrosParaString(search);
+    const url = `${this.apiUrl}/passagem/search?${params}`;
+    const obs = this.httpClient.get<Resultado>(url);
 
     obs.pipe(take(1)).subscribe(res => {
-      this.precoMin = res.precoMin
-      this.precoMax = res.precoMax
-    })
+      this.precoMin = res.precoMin;
+      this.precoMax = res.precoMax;
+    });
 
-    return obs
+    return obs;
   }
 
   converterParametrosParaString(busca: DadosBusca){
     const query = Object.entries(busca)
         .map( ([key,value]) => {
           if(!value){
-            return '' 
+            return ''; 
           }
           if (key === 'tipo'){
-            return `${key}=${encodeURIComponent(value.toString())}`
+            return `${key}=${encodeURIComponent(value.toString())}`;
           }
-          return `${key}=${value.toString()}`
+          return `${key}=${value.toString()}`;
         })
         .filter(Boolean)
-        .join('&')
+        .join('&');
 
-    return query
+    return query;
   }
 
   obterPassagensDestaques (passagens: Passagem[]): Destaques | undefined {
     if(!passagens.length){
-      return undefined
+      return undefined;
     }
 
     const ordenadoPorTempo = [...passagens].sort(
       (a, b) => a.tempoVoo - b.tempoVoo
-    )
+    );
 
     const ordenadoPorPreco = [...passagens].sort(
       (a, b) => a.total - b.total
-    )
+    );
 
-    const maisRapida = ordenadoPorTempo[0]
-    const maisBarata = ordenadoPorPreco[0]
+    const maisRapida = ordenadoPorTempo[0];
+    const maisBarata = ordenadoPorPreco[0];
 
     const ordenadoPorMedia = [...passagens].sort(
       (a, b) => {
@@ -69,11 +69,11 @@ export class PassagensService {
         const pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
       return pontuacaoA - pontuacaoB;
       }
-    )
+    );
 
-    const sugerida = ordenadoPorMedia[0]
+    const sugerida = ordenadoPorMedia[0];
     
-    return { maisRapida, maisBarata, sugerida }
+    return { maisRapida, maisBarata, sugerida };
   }
 
 }

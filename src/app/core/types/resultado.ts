@@ -1,4 +1,4 @@
-import { Passagem } from "./passagem"
+import { Passagem } from "./passagem";
 
 export interface Resultado {
     paginaAtual: number

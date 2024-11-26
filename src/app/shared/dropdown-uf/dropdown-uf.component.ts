@@ -35,7 +35,7 @@ export class DropdownUfComponent implements OnInit {
   }
 
   private filtrarUFs(value: string | UnidadeFederativa): UnidadeFederativa[] {
-    const nomeUf = typeof value === 'string' ? value : value?.nome
+    const nomeUf = typeof value === 'string' ? value : value?.nome;
 
     const valorFiltrado = nomeUf?.toLowerCase();
 
@@ -47,6 +47,6 @@ export class DropdownUfComponent implements OnInit {
   }
 
   displayFn(estado: UnidadeFederativa): string {
-    return estado && estado.nome ? estado.nome : ""
+    return estado && estado.nome ? estado.nome : "";
   }
 }

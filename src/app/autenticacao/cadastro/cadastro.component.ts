@@ -10,7 +10,7 @@ import { Usuario } from 'src/app/core/types/usuario';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent {
-  perfilComponent = false
+  perfilComponent = false;
 
   constructor(
     private formularioService: FormularioService,
@@ -19,20 +19,20 @@ export class CadastroComponent {
   ){}
 
   cadastrar() {
-    const formCadastro = this.formularioService.getCadastro()
+    const formCadastro = this.formularioService.getCadastro();
 
     if(formCadastro?.valid) {
-      const usuario = formCadastro.getRawValue() as Usuario
+      const usuario = formCadastro.getRawValue() as Usuario;
       this.authService.cadastrar(usuario).subscribe({
         next: (value) => {
-          console.log("Cadastro realizado com sucesso: ", value)
-          this.router.navigate(['auth/login'])
+          console.log("Cadastro realizado com sucesso: ", value);
+          this.router.navigate(['auth/login']);
         },
         error: (err) => {
-          console.log("Erro ao realizar cadastro: ", err)
+          console.log("Erro ao realizar cadastro: ", err);
         }
 
-      })
+      });
     }
     
   }

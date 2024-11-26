@@ -7,5 +7,5 @@ import { Depoimento } from 'src/app/core/types/depoimento';
   styleUrls: ['./card-depoimento.component.scss']
 })
 export class CardDepoimentoComponent {
-  @Input() depoimento!: Depoimento
+  @Input() depoimento!: Depoimento;
 }
