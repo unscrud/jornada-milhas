@@ -15,6 +15,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import {matSnackBarAnimations, MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
     exports: [
@@ -34,6 +35,7 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
         MatCheckboxModule,
         MatAutocompleteModule,
         MatSliderModule,
+        MatSnackBarModule,
     ],
     providers: [
         { 
